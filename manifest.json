@@ -1,0 +1,31 @@
+{
+  "name": "Roverapp",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "icons/icon16.png"
+  },
+  "manifest_version": 2,
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ]
+  },
+  "permissions": [
+    "cookies",
+    "tabs",
+    "https://revcontent.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/jquery/jquery.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
